@@ -1,12 +1,10 @@
-import os
 from flask import Flask, redirect, render_template, request, jsonify, url_for
 from firebase_admin import credentials, firestore, initialize_app
 
 # Initialize Flask App
 app = Flask(__name__)
+
 # Initialize Firestore DB
-
-
 cred = credentials.Certificate("./newkey.json")
 firebase= initialize_app(cred)
 db = firestore.client()
@@ -53,5 +51,3 @@ def delete():
 
 if __name__ == '__main__':
     app.run()
-# port = int(os.getenv("PORT", 8080))
-# threaded=True, debug=True, host='0.0.0.0', port=port
