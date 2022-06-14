@@ -10,7 +10,7 @@
 </head>
   <body>
   <div class="container">
-    <h2 class="display-2">Create</h2>
+    <h2 class="display-2">Create your activity here</h2>
     <form method="POST" action="/add">
          <div class="input-group mb-3">
               <input type="text" name="text" class="form-control" placeholder="Add a new TODO item">
@@ -20,7 +20,7 @@
             </div>
     </form>
 
-    <h2 class="display-2">List</h2>
+    <h2 class="display-2">List of activities</h2>
     {% for note in notes %}
       <p>
         <form method="POST" action="/edit/{{note.id}}">
