@@ -52,5 +52,6 @@ def delete():
 
 
 if __name__ == '__main__':
-    port = int(os.getenv("PORT", 8080))
-    app.run(threaded=True, debug=True, host='0.0.0.0', port=port)
+    app.run()
+# port = int(os.getenv("PORT", 8080))
+# threaded=True, debug=True, host='0.0.0.0', port=port
