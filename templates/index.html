@@ -23,24 +23,21 @@
     <h2 class="display-2">List of activities</h2>
     {% for note in notes %}
       <p>
-        <form method="POST" action="/edit/{{note.id}}">
-            <div class="input-group mb-3">
-
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                    <input type="hidden" name="done" value="off">
-                    <input type="checkbox" onclick="redirect('/edit/{{note.id}}')" data-target="/edit/{{note.id}}" name="done">
-                </div>
-              </div>
-
-              <input type="text" title="{{note.dateAdded}}" value="{{note.text}}" name="text" class="form-control">
-
-              <div class="input-group-append" id="button-addon2">
-                <button class="btn btn-outline-secondary" type="submit" value="update">Update</button>
-              </div>
-
-            </div>
-        </form>
+          <div>
+            <input type="text" title="{{note.dateAdded}}" value="{{note.text}}" name="text" class="form-control">
+            <form method="POST" action="/delete" style="display: inline;">
+                  <div class="input-group-append" id="button-addon2">
+                    <input type="hidden" title="{{note.dateAdded}}" value="{{note.text}}" name="text" class="form-control"/>
+                    <button class="btn btn-outline-secondary" type="submit" value="update">Delete</button>
+                  </div>
+            </form>
+            <form method="POST" action="/update" style="display: inline;">
+                  <div class="input-group-append" id="button-addon2">
+                    <input type="hidden" title="{{note.dateAdded}}" value="{{note.text}}" name="text" class="form-control"/>
+                    <button class="btn btn-outline-secondary" type="submit" value="update">Update</button>
+                  </div>
+            </form>
+        </div>
       {% endfor %}
   </div>
   </body>
