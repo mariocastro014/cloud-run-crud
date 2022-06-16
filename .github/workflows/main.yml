@@ -6,3 +6,15 @@ on: [pull_request, push]
 env:
   ## Sets environment variable
   API_KEY: ${{ secrets.API_KEY }}    
+
+run: echo "The API key is:$API_KEY"
+name: env_tutorial
+## Triggers the workflow on when there is a push, or 
+## pull request on the main branch
+on: [pull_request, push] 
+
+env:
+  ## Sets environment variable
+  API_KEY: ${{ secrets.API_KEY }}    
+
+run: echo "The API key is:${{ secrets.API_KEY }}"
