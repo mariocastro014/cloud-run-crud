@@ -1,13 +1,12 @@
 from flask import Flask, redirect, render_template, request, url_for
 from firebase_admin import credentials, firestore, initialize_app, _apps
-import os
 
 # Initialize Flask App
 app = Flask(__name__)
 
 # Initialize Firestore DB
 if not _apps:
-    cred = credentials.Certificate(os.envriron["API_KEY"]) 
+    cred = credentials.Certificate("./newkey.json") 
     firebase = initialize_app(cred)
 
 db = firestore.client()
